@@ -11,6 +11,7 @@
 #include <vector>
 #include <random>
 #include <chrono>
+#include <algorithm>
 #include "BItemVisitor.h"
 
 namespace bencoding {
@@ -103,7 +104,7 @@ BList::reference BList::front() {
 }
 
 BList::reference &BList::operator[](size_t idx) {
-    assert(itemList.size() > idx && idx >= 0  && "cannot call front() on an empty list");
+    assert(itemList.size() > idx && "cannot call front() on an empty list");
 
     return itemList[idx];
 }
